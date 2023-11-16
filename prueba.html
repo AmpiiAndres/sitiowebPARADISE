@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    
+        .column {
+            flex: 0 0 30%; /* Establece el ancho de cada columna */
+            margin: 10px;
+        }
+    
+        .card {
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column; /* Hacer que el contenido se apile verticalmente */
+        }
+    
+        .card:hover {
+            transform: scale(1.05);
+        }
+    
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin distorsionarse */
+            max-height: 200px; /* Altura máxima de la imagen */
+        }
+    
+        .card-content {
+            padding: 15px;
+            text-align: center;
+            flex: 1; /* Hace que ocupe todo el espacio disponible verticalmente */
+        }
+    
+        .btn-see-more {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+    
+        .btn-see-more:hover {
+            background-color: #45a049;
+        }
+    
+        .card-info {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    
+        .card.show-info .card-info {
+            display: block;
+        }
+            /* Media Query para tabletas */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .column {
+            flex: 0 0 48%; /* Dos tarjetas por fila en tabletas */
+            box-sizing: border-box;
+        }
+    }
+
+    /* Media Query para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+        .column {
+            flex: 0 0 100%; /* Una tarjeta por fila en dispositivos móviles */
+            box-sizing: border-box;
+        }
+    }
+     
+    </style>
+
+    <div class="container">
+
+        <!-- Columna 1 -->
+        <div class="column">
+            <div class="card">
+                <img  src="Imagenes/prota 1.1.jpg" alt="Personaje 1">
+                <div class="card-content">
+                    <h3>Personaje 1</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Kostja Ullmann (nacido el 30 de mayo de 1984) es un actor alemán, mejor conocido por 
+                            su papel principal en el galardonado drama sobre la mayoría de edad Sommersturm ( Tormenta de verano ), 
+                            que obtuvo muchos elogios en toda Europa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/prota 4.1.jpg" alt="Personaje 2">
+                <div class="card-content">
+                    <h3>Personaje 2</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Corinna Kirchhoff nació (nacida el 9 de marzo de 1958 ) en Düsseldorf, Renania del Norte-Westfalia, 
+                            Alemania Occidental . sucedió. Ella es una actriz alemana. Entre ellos se encuentran Casting (2017), 
+                            Riscante Peshenton (2012) y Tatorte (1970). Debutó en teatro con Peter Stein en el Schaubühne Berlin. 
+                            Desde 2015 forma parte de la compañía de interpretación del Schauspiel Frankfurt y en 2017/18 se unió al Berliner Ensemble.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="column">
+
+            <div class="card">
+                <img src="Imagenes/prota 2.1.jpg" alt="Personaje 3">
+                <div class="card-content">
+                    <h3>Personaje 3</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Iris Renate Dorothea Berben , nacida el 12 de agosto de 1950, es una actriz alemana. 
+                            Berben ha aparecido en unas 150 producciones cinematográficas y televisivas desde 1969. Hasta hoy, 
+                            Berben desempeña papeles principales en un gran número de producciones televisivas alemanas, incluida 
+                            la comedia Zwei himmlische Töchter en los años 1970 y el programa de comedia Sketchup con Diether Krebs 
+                            en los años 1980.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/prota 3.1.jpg" alt="Personaje 4">
+                <div class="card-content">
+                    <h3>Personaje 4</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Marlene Tanczik es una actriz alemana. A los 13 años comenzó su formación preprofesional de danza. 
+                            Completó dos años de formación en ballet y danza contemporánea en la Universidad de Danza Palucca en Dresde. 
+                            Integró la compañía de danza “Carrot Dancers”. A su vez, tambien ha estado frente a la cámara en cine y televisión desde 2015. 
+                            En la película de cuento de hadas El agua de la vida en 2017 interpretó el papel principal femenino.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="column">
+
+            <div class="card">
+                <img src="Imagenes/prota 7.1.jpg" alt="Personaje 5">
+                <div class="card-content">
+                    <h3>Personaje 5</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Lucas Lynggaard Tønnesen es un actor danés nacido el 13 de julio de 2000, en la ciudad de Copenhague, 
+                            Dinamarca. Tønnesen participó en 2013 en la película Misericordia. En 2018 tuvo un papel principal 
+                            en la serie The Rain de Netflix, interpretando el personaje de Rasmus. En 2022 participó en la serie “1899” de Netflix, 
+                            una serie de ocho capítulos donde toda la historia gira alrededor de un barco donde se suceden diversos misterios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img  src="Imagenes/prota 6.1.jpg" alt="Personaje 6">
+                <div class="card-content">
+                    <h3>Personaje 6</h3>
+                    <a href="#" class="btn-see-more" onclick="toggleInfo(this)">Ver más</a>
+                    <div class="card-info">
+                        <p>Lorna Ishema es una acriz nacida en 1989 en Rubaga en Uganda y creció en Hannover. 
+                            Estudió actuación desde 2010 en la Escuela Otto Falckenberg de Múnich , donde se graduó en el verano de 2014.
+                            En 2021 protagonizó Ivie como Ivie , un largometraje de Sarah Blaßkiewitz sobre la búsqueda de identidad de dos 
+                            medias hermanas afroalemanas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleInfo(btn) {
+            var card = btn.closest('.card');
+            card.classList.toggle('show-info');
+        }
+    </script>
+
+</body>
+</html>
